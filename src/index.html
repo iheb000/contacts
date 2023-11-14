@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../assets/document.png" type="image/png">
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="main.js"></script>
+   
+    
+    <title >Gestionnaire de contacts</title>
+</head>
+<body>
+    <header>
+        <h1 id="main_title" class="rotate-on-hover">Gestionnaire de contacts</h1>
+    </header>
+    
+    <section>
+        <article id="formContacts">
+            <header>
+                <h1>Ajout d'un contact</h1>
+            </header>
+            <details>
+                <summary>
+                    Cliquer pour voir le formulaire.
+                </summary>
+                <form  id="form" method="post">
+                    <fieldset >
+                        <legend>Nouveau contact</legend>
+                        <label>
+                            <span>Nom :</span>
+                            <input id="nom" type="text" required maxlength="32" pattern="[^%&$]+" placeholder="Nom">
+                        </label>
+                        <label>
+                            <span>Prénom :</span>
+                            <input id="prenom" type="text" required maxlength="32" pattern="[^%&$]+" placeholder="Prénom">
+                        </label>
+                        <label>
+                            <span>Téléphone :</span>
+                            <input id="tel" type="tel" required pattern="^\+216 \d{2} \d{3} \d{3}$" placeholder="+216 99 999 999">
+                        </label>
+                        <label>
+                            <span>Email :</span>
+                            <input id="mail" type="email" required pattern=".*@enit.utm.tn" placeholder="use.name@enit.utm.tn">
+                        </label>
+                        <label>
+                            <span>Date de naissance :</span>
+                            <input id="d_n"  type="date" required onchange="verifdate(this)">
+                        </label>
+                        <label>
+                            <span>Nombre d'enfants :</span>
+                            0 <input id="nb_e" type="range" min="0" max="5"> 5
+                        </label>
+                    </fieldset>
+                    <button id="Ajouter-client" type="submit">OK</button>
+                </form>
+            </details>
+        </article>
+        <article id="contacts">
+            <header>
+                <h1>Liste des contacts</h1>
+            </header>
+            <table>
+                <thead>
+                    <tr>
+                        <th>doc</th>
+                        <th>Prénom</th>
+                        <th>Nom</th>
+                        <th>Téléphone</th>
+                        <th>Email</th>
+                        <th>Date de naissance</th>
+                        <th>Nombre enfants</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                   
+                </tbody>
+            </table>
+            <img id="trash" src="../assets/poubelle.png" ondragover="allowDrop(event)" ondrop="deleteUser(draggedUserId)">
+            <audio id="deleteSound" src="../assets/PoubelleSound.mp3"></audio>
+        </article>
+    </section>
+    <footer>@iheb_bs</footer>
+  
+</body>
+</html>
